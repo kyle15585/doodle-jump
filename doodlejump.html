@@ -8,36 +8,39 @@
         #gamearea {
             background-image: url(doodle_img/background.png);
             border: 1px solid #d3d3d3;
-        }
-
+        };
     </style>
 </head>
 
-<body onload="gameStart()">
-    <div id="myfilter" style="position:absolute;background-color:burlywood;opacity:0.3;width:532px;height:850px;display:none"></div>
-    <div id="myrestartbutton" style="position:absolute;top:425px;left:230px;display:none;"><button onclick="restartGame()">Restart</button></div>
-    <div id="canvascontainer"><canvas id="gamearea" width="532" height="850"></canvas></div>
-    
+<body onload="gameStart()" style="background-color:bisque">
+    <div style="width: 40%;display: inline-block"></div>
+    <div style="width: 40%;display: inline-block">
+        <div id="myfilter" style="position:absolute;background-color:burlywood;opacity:0.3;width:532px;height:850px;display:none"></div>
+        <div id="myrestartbutton" style="position:absolute;margin-top: 425px;margin-left:230px;display:none;"><button onclick="restartGame()">Restart</button></div>
+        <div id="canvascontainer"><canvas id="gamearea" width="532" height="850"></canvas></div>
+    </div>
+    <div style="width: 40%;display: inline-block"></div>
+
     <script type="text/javascript">
         var doodle;
         var plateform = [];
         var myScore;
         var score = 0;
-        
-        function restartGame(){
-            document.getElementById("myfilter").style.display="none";
-            document.getElementById("myrestartbutton").style.display="none";
+
+        function restartGame() {
+            document.getElementById("myfilter").style.display = "none";
+            document.getElementById("myrestartbutton").style.display = "none";
             gamearea.stop();
             gamearea.clear();
             //gamearea={};
-            doodle={};
-            plateform=[];
-            myScore={};
-            score=0;
+            doodle = {};
+            plateform = [];
+            myScore = {};
+            score = 0;
             gameStart();
         }
-        
-        
+
+
 
         function gameStart() {
             gamearea.start();
@@ -156,8 +159,8 @@
 
         function updateGameArea() {
             if (doodle.y > gamearea.canvas.height) {
-                document.getElementById("myfilter").style.display="block";
-                document.getElementById("myrestartbutton").style.display="block";
+                document.getElementById("myfilter").style.display = "block";
+                document.getElementById("myrestartbutton").style.display = "block";
                 gamearea.stop()
             } else {
                 console.log(doodle.gravitySpeed)
