@@ -8,18 +8,21 @@
         #gamearea {
             background-image: url(doodle_img/background.png);
             border: 1px solid #d3d3d3;
-        };
+        }
+
+        ;
+
     </style>
 </head>
 
 <body onload="gameStart()" style="background-color:bisque">
-    <div style="width: 40%;display: inline-block"></div>
-    <div style="width: 40%;display: inline-block">
+    
+    <div style="position: absolute;left: 35%">
         <div id="myfilter" style="position:absolute;background-color:burlywood;opacity:0.3;width:532px;height:850px;display:none"></div>
         <div id="myrestartbutton" style="position:absolute;margin-top: 425px;margin-left:230px;display:none;"><button onclick="restartGame()">Restart</button></div>
         <div id="canvascontainer"><canvas id="gamearea" width="532" height="850"></canvas></div>
     </div>
-    <div style="width: 40%;display: inline-block"></div>
+
 
     <script type="text/javascript">
         var doodle;
